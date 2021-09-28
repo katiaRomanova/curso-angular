@@ -5,18 +5,18 @@
 const equipos = ['R. Madrid', 'Barcelona', 'Valencia', 'Villarreal', 'Sevilla']
 
 //ejecutamos la función,
-getEnfrentamientos(equipos);
+//getEnfrentamientos(equipos);
 
 //rest params
 //desestructuracion
 //funcion recursiva
 
-function getEnfrentamientos(equipos: Array<string>): void {
+//function getEnfrentamientos(equipos: Array<string>): void {
 
     //mezclamos el array de equipos,
     shuffleArray(equipos);
 
-    let restaEquipos = (equipos: Array<string>) => {
+    let getEnfrentamientos = (equipos: Array<string>) => {
 
         //el caso cuando queda solo un equipo,
         if (equipos.length == 1) {
@@ -34,12 +34,12 @@ function getEnfrentamientos(equipos: Array<string>): void {
 
             console.log(`${equipo1} vs ${equipo2}`);
 
-            return restaEquipos(newEquipos);
+            return getEnfrentamientos(newEquipos);
         }
     };
 
-    console.log(restaEquipos(equipos))
-}
+    console.log(getEnfrentamientos(equipos));
+//}
 
 //función que mezcla el contenido de un array,
 function shuffleArray(array: Array<string>): void {

@@ -1,33 +1,33 @@
 //import _ from 'underscore'; para ecma6, y en package.json añadir type:module
 //const _ = require('underscore');
 //const equipos = ['R. Madrid' , 'Barcelona', 'Valencia', 'Villarreal']
-const equipos = ['R. Madrid', 'Barcelona', 'Valencia', 'Villarreal', 'Sevilla'];
+var equipos = ['R. Madrid', 'Barcelona', 'Valencia', 'Villarreal', 'Sevilla'];
 //ejecutamos la función,
-getEnfrentamientos(equipos);
+//getEnfrentamientos(equipos);
 //rest params
 //desestructuracion
 //funcion recursiva
-function getEnfrentamientos(equipos) {
-    //mezclamos el array de equipos,
-    shuffleArray(equipos);
-    let restaEquipos = (equipos) => {
-        //el caso cuando queda solo un equipo,
-        if (equipos.length == 1) {
-            return `${equipos[0]} pasa la siguiente ronda`;
-        }
-        //cuando hay solo dos equipos,
-        else if (equipos.length == 2) {
-            return `${equipos[0]} vs ${equipos[1]}`;
-        }
-        //el resto de los casos,
-        else {
-            const [equipo1, equipo2, ...newEquipos] = equipos;
-            console.log(`${equipo1} vs ${equipo2}`);
-            return restaEquipos(newEquipos);
-        }
-    };
-    console.log(restaEquipos(equipos));
-}
+//function getEnfrentamientos(equipos: Array<string>): void {
+//mezclamos el array de equipos,
+shuffleArray(equipos);
+var getEnfrentamientos = function (equipos) {
+    //el caso cuando queda solo un equipo,
+    if (equipos.length == 1) {
+        return equipos[0] + " pasa la siguiente ronda";
+    }
+    //cuando hay solo dos equipos,
+    else if (equipos.length == 2) {
+        return equipos[0] + " vs " + equipos[1];
+    }
+    //el resto de los casos,
+    else {
+        var equipo1 = equipos[0], equipo2 = equipos[1], newEquipos = equipos.slice(2);
+        console.log(equipo1 + " vs " + equipo2);
+        return getEnfrentamientos(newEquipos);
+    }
+};
+console.log(getEnfrentamientos(equipos));
+//}
 //función que mezcla el contenido de un array,
 function shuffleArray(array) {
     //para ordenar aleatoriamente,
