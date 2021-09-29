@@ -1,0 +1,44 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p>Me llamo {{nombre}} !!!</p>
+<p>Hola {{nombre !== '' ? nombre : 'Mundo'}}</p>
+<!-- evitar llamar una función dentro del string
+interpolation: -->
+<p>{{getSaludo('Arya')}}</p>
+
+<h3>Property Binding</h3>
+<!-- no hacerlo así:-->
+<input type="text" value="{{print}}">
+<!--es el forma correcto para usar property binding: -->
+<input type="text" [value]="print" [disabled]="deshabilitado">
+<!--va a buscar propiedad blue-->
+<p [style.color]="blue">El color de la letra es azúl</p>
+<!--si no tenemos una propiedad blue añadir comillas simples:-->
+<p [style.color]="'blue'">El color de la letra es azúl</p>
+
+<h3>Event Binding</h3>
+<button type="button" (click)="muestraMensaje('Un mensaje de test', $event)">
+    Show message</button>
+
+<button type="button" (click)="canta()">Canta la intro</button>
+
+<app-eventos></app-eventos>
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)] = "print">
+<button type="button" (click)="resetearData()">Resetear data</button>
+<br>
+<input type="text" [(ngModel)] = "persona.nombre">
+<input type="text" [(ngModel)] = "persona.apellidos">
+<p>{{persona.nombre}} {{persona.apellidos}}</p>
+
+<h3>Nuestro 2Way Binding</h3>
+<!--se puede utilizar evento input-->
+<input type="text" [value] = "propiedad" (keyup)="saveInput($event)"/>
+<p>{{propiedad}}</p>
+
+<h3>Variables de plantilla</h3>
+<input type="text" #input1>
+<button type="button" (click)="muestraMensaje(input1.value, $event)">
+    Mostrar texto input</button>
