@@ -1,0 +1,28 @@
+<h2>Comunicación entre componentes (Input/Output)</h2>
+<!-- Para valores por defecto
+<app-sugus></app-sugus> -->
+<!-- para poder utilizar álias
+<app-sugus  color="orange" sabor1= "Naranja"></app-sugus>-->
+<div style="display: flex;">
+<app-sugus color="orange" sabor= "Naranja"></app-sugus>
+<app-sugus color="blue" sabor= "Piña"></app-sugus>
+<app-sugus color="red" sabor= "Frambuesa"></app-sugus>
+</div>
+
+<div>
+<app-producto
+    title="Radar Newsletter"
+    img="https://ph-files.imgix.net/a1883aed-a9eb-43fb-a305-8dee8b6aa453.jpeg?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=100&h=100&fit=crop&dpr=2"
+    text="A curated newsletter of everything interesting in tech">
+</app-producto>
+<app-producto></app-producto>
+<app-producto 
+    title="AngelList Weekly"
+    img="https://ph-files.imgix.net/f74054fb-6525-494b-bb89-f5c476ce2e12.png?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=100&h=100&fit=crop&dpr=2"
+    text="The best of the startup world, curated weekly">
+</app-producto>
+</div>
+<app-anakin></app-anakin>
+
+<app-mi-boton textBtn="Alert" [handleClick]="fnAlert"></app-mi-boton>
+<app-mi-boton textBtn="Console" [handleClick]="fnConsole"></app-mi-boton>

@@ -1,0 +1,27 @@
+    .icono {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    color: white;
+    float: left;
+    border: 1px solid black;
+    margin: 10px;
+    overflow: hidden;
+   }
+
+   .content {
+    float: left;
+   }
+
+   .producto {
+    /*clear: left; */
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   }
+
+   img {
+       width: 100%;
+   }
+    

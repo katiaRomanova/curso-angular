@@ -1,0 +1,23 @@
+<h2>Pipes</h2>
+<p>{{unTexto | uppercase}}</p>
+<p>{{unTexto | lowercase}}</p>
+<p>{{unTexto | titlecase}}</p>
+<p>{{unTexto | slice:3}}</p>
+<p>{{unTexto | slice:3:7}}</p>
+<p>{{unTexto | slice:0:5}} ...</p>
+<p>{{precio | currency}}</p>
+<p>{{precio | currency:'EUR'}}</p>
+<p>{{fecha}}</p>
+<p>{{fecha | date}}</p>
+<p>{{fecha | date:'dd-MM-yyyy, HH:mm'}}</p>
+
+<pre>{{persona}}</pre>
+<pre>{{persona | json}}</pre>
+
+<p>{{precio | double}}</p>
+<p>{{precio | double:5}}</p>
+<p>{{precio | double:5:3}}</p>
+
+<p>{{'hola mundo' | reverse}}</p>
+<p>{{unTexto | reverse}}</p>
+<p>{{'hola mundo cruel hola ' | hideWords: ['hola', 'cruel']}} </p>

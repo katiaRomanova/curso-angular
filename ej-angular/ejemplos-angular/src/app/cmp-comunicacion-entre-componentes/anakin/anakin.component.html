@@ -1,0 +1,15 @@
+<p>Mi hijo es {{nombreLuke}} y mi hija es {{nombreLeia}}</p>
+<hr>
+<app-luke 
+[nombre]="nombreLuke"
+[handleChangeNombre]="cambiaNombreLuke">
+</app-luke>
+<hr>
+<app-leia 
+[nombre]="nombreLeia" 
+(nombreCambiado)="cambiaNombreLeia($event)">
+</app-leia>
+
+<app-leia 
+[nombre]="nombreLeia">
+</app-leia>
