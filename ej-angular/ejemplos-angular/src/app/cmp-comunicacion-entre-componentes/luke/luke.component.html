@@ -1,5 +1,8 @@
 <h3>[LUKE] Me llamo {{nombre}}</h3>
-
-<!-- <app-mi-boton textBtn="Cámbiame el nombre"
-[handleClick]="handleChangeNombreLuke('Luky')"></app-mi-boton> -->
+<input type="text" #nombreLuke>
+<app-mi-boton textBtn="Cámbiame el nombre2"
+[handleClick]="handleChangeNombreLuke(nombreLuke.value)"></app-mi-boton>
+<br>
+ <app-mi-boton textBtn="Cámbiame el nombre"
+[handleClick]="handleChangeNombreLuke('Luky')"></app-mi-boton>
 

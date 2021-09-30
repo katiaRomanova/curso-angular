@@ -10,7 +10,11 @@ export class AnakinComponent implements OnInit {
   nombreLuke = 'Luke SkyWalker';
   nombreLeia = 'Leia Organa';
 
-  constructor() { }
+  constructor() {
+    //en el caso de función de flecha cometar la línea siguente:
+    this.cambiaNombreLuke2 = this.cambiaNombreLuke2.bind(this);
+   // this.cambiaNombreLuke = this.cambiaNombreLuke.bind(this);
+  }
 
   ngOnInit(): void {
   }
@@ -19,10 +23,21 @@ export class AnakinComponent implements OnInit {
     this.nombreLeia = nuevoNombre;
   }
 
-  cambiaNombreLuke(nuevoNombre: any): void {
-    console.log('a', {nuevoNombre});
-    this.nombreLuke = nuevoNombre;
-    console.log('NL: ' + this.nombreLuke);
+  cambiaNombreLuke(): any {
+   /*  console.log('a', {nuevoNombre});
+    console.log('a THIS: ',this); */
+    return (nuevoNombre: any) => this.nombreLuke = nuevoNombre;
+    /* console.log('NL: ' + this.nombreLuke); */
+  }
+
+  cambiaNombreLuke2() {
+    /* //this de anakin
+    console.log(this);
+    this.cambiaNombreLuke('Katia');
+
+    //quitar void en este caso.
+    //return () =>  */
+    this.nombreLuke = 'Katia';
   }
 
 }

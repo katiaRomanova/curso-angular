@@ -1,0 +1,17 @@
+.fondoAmarillo {
+    background-color: yellow;
+}
+
+.letraRoja {
+    color: red;
+}
+
+.darkMode{
+    background-color: grey;
+    color: white
+}
+
+.lightMode{
+    background-color: honeydew;
+    color: black;
+}

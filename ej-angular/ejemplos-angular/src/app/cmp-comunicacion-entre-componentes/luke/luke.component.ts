@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LukeComponent implements OnInit {
   @Input() nombre = '';
-  @Input() handleChangeNombre = (a: any) => {};
+  @Input() handleChangeNombre: any;
 
   constructor() { }
 
@@ -15,10 +15,10 @@ export class LukeComponent implements OnInit {
   }
 
   handleChangeNombreLuke(txt: string) : any {
-   
-    console.log('bb');
+    //console.log('bb');
       return () => {
-        console.log('c', {txt});
+       /*  console.log('c', {txt});
+        console.log(this); */
         this.handleChangeNombre(txt);
       }
   }

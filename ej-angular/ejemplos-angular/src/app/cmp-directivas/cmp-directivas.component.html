@@ -1,0 +1,93 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+<!-- ngStyle es una directiva, recibe un objeto {}
+    para hacer los stilos dinámicos al botón p.ej.-->
+<p [ngStyle]="getStyles()">El texto subrayado y de color naranja</p>
+<p [ngStyle]="{textDecoration: underline}">El texto subrayado y de color naranja</p>
+<p [ngStyle]="{'text-decoration': 'underline'}">El texto subrayado y de color naranja</p>
+<!-- es como coger clases de css -->
+<p [ngClass]="getClases()">El texto de color rojo con fondo amarillo</p>
+
+<input type="text" [(ngModel)]="colorLetra">
+<button type="button" (click)="toggleFondo()">Pinta fondo</button>
+
+<!-- cambia la estructura del documento
+elimina o añade elementos, p.ej. -->
+<h3>Estructurales</h3>
+
+<!-- *ngIf -->
+<!-- <button type="button" *ngIf="darkMode" (click)="activaLightMode()">🌙</button>
+<button type="button" *ngIf="!darkMode" (click)="activaDarkMode()">🌞</button> -->
+
+<!-- *ngIf else 
+<button type="button" *ngIf="darkMode; else sol" (click)="activaLightMode()">🌙</button>
+
+<ng-template #sol>
+    <button type="button" (click)="activaDarkMode()">🌞</button>
+</ng-template>-->
+
+<!-- *ngThen -->
+
+<ng-container *ngIf="darkMode; then dark else light">
+</ng-container>
+
+<ng-template #dark>
+    <button type="button" (click)="activaLightMode()">🌙</button>
+</ng-template>
+
+<ng-template #light>
+    <button type="button" (click)="activaDarkMode()">🌞</button>
+</ng-template>
+
+<!-- *ngFor -->
+
+<ul>
+    <li [ngStyle]="{listStyle: 'none'}" 
+    *ngFor="let animal of animales; let pos = index;
+    let isLast = last; let isFirst = first; trackBy: trackByAnimales" 
+    >
+    <hr *ngIf="isFirst">
+        <span>
+            {{pos + 1}} : {{animal | titlecase}} {{isLast ? '(Last)' : '(Is not last)'}}
+        </span>
+        <hr *ngIf="isLast">
+    </li>
+</ul>
+<!-- trackBy se usa cuando hay una lista y componenetes se añaden al inicio o al medio,
+se puede eliminar un elemento, ordenar -->
+<ul>
+    <li
+    *ngFor="let animal of animales2; trackBy: trackByAnimales2">
+        <span>
+            {{animal.tipo | titlecase}}
+        </span>
+    </li>
+</ul>
+
+<div [ngSwitch]=colorLetra>
+ <!--  <p *ngSwitchCase="'orange'">La letra naranja</p>
+    <p *ngSwitchCase="'blue'">La letra azul</p>
+    <p *ngSwitchCase="'red'">La letra roja</p> -->
+    <ng-container *ngFor="let color of colores" >
+        <p *ngSwitchCase="color">La letra es {{color}}</p>
+    </ng-container>
+    <p *ngSwitchDefault>La letra negra</p>
+</div>
+
+<!-- no funciona porque hemos puesto un álias al Input,
+    <p appMarcar color="yellow">Estoy usando la directiva appMarcar</p>  -->
+
+<!-- coge valor yellow -->
+<p appMarcar="yellow">Estoy usando la directiva appMarcar</p>
+<!-- busca el valor de la propiedad colorLetra -->
+<p [appMarcar]="colorLetra">Estoy usando la directiva appMarcar</p>
+<p appMarcar>Estoy usando la directiva appMarcar</p>
+
+
+<!-- cambia color de background, de letras aleatoriamente
+input tiene que estar moviendo -->
+
+<input [appPowerMode]=coloresSimbolo type="text">
+    
+
