@@ -9,16 +9,16 @@ export class MarcarDirective implements OnInit{
   @Input('appMarcar') color: string = 'green';
 
   constructor(private elementRef: ElementRef) {
-    console.log(elementRef);
+    //console.log(elementRef);
     //elementRef.nativeElement.style.backgroundColor = 'green';
   }
 
   ngOnInit() {
-    console.log({color: this.color});
+    //console.log({color: this.color});
    // this.color = this.color ==='' ? 'blue' : this.color;
     this.color = this.color || 'blue';
 
-    console.log({color1: this.color});
+    //console.log({color1: this.color});
   }
 
   @HostListener('mouseover') onMouseOver() {
@@ -28,6 +28,4 @@ export class MarcarDirective implements OnInit{
   @HostListener('mouseleave') onMouseLeave() {
     this.colorFondo = 'white';
   }
-
-
 }

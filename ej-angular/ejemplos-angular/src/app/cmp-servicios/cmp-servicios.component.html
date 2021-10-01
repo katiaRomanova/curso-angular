@@ -1,0 +1,13 @@
+<h2>Servicios</h2>
+<div>
+    <label for="mansaje">Mensaje:</label>
+    <input type="text" id="message" #msg>
+</div>
+
+<button type="button" (click)="muestraInfo(msg.value)">Mustra info</button>
+<button type="button" (click)="muestraError(msg.value)">Mustra error</button>
+
+<hr>
+<app-s-leia></app-s-leia>
+<app-s-luke></app-s-luke>
+<hr>

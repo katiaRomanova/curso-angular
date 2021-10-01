@@ -27,6 +27,8 @@ export class CmpDirectivasComponent implements OnInit {
     'orange', 'blue', 'red'
   ]
 
+  filtraColor = '';
+
   coloresSimbolo= [
     'orange', 'blue', 'red', 'yellow', 'grey', 'pink', 'brown', 'violet'
   ]
@@ -35,6 +37,14 @@ export class CmpDirectivasComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+
+  addColor(event: any){
+    //push guarda valor en la misma instancia de array 
+    //this.colores.push(event.target.value);
+    //guargamos un valor nuevo en una nueva instancia de array
+    //para que se detecta cambios pipe,
+    this.colores = [... this.colores, event.target.value];
   }
 
   activaDarkMode(){
@@ -66,12 +76,12 @@ export class CmpDirectivasComponent implements OnInit {
   }
 
   trackByAnimales(index: number, animal: string){
-    console.log(animal);
+    //console.log(animal);
     return index;
   }
 
   trackByAnimales2(index: number, animal: any){
-    console.log(animal.id);
+    //console.log(animal.id);
     return animal.id;
   }
 }

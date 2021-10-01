@@ -26,7 +26,6 @@ export class PowerModeDirective {
   @HostListener('input') onInput() {
     this.numRandom = this.randomNum(0, this.colores.length);
     //console.log('this.numRandom: ' +  this.numRandom);
-
     this.colorSimbolo = this.colores[this.numRandom];
     this.colorFondo = this.colores[this.randomNum(0, this.colores.length)];
   }

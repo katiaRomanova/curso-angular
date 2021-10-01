@@ -16,6 +16,23 @@
 elimina o añade elementos, p.ej. -->
 <h3>Estructurales</h3>
 
+<div>
+    <label for="nuevoColor">Añade un color: </label>
+    <input type="text" id="nuevoColor" (change)="addColor($event)" >
+</div>
+<ul>
+    <li *ngFor="let color of colores">{{color}}</li>
+</ul>
+
+
+<div>
+    <label for="filtro">Filtra por: </label>
+    <input type="text" id="filtro" [(ngModel)]="filtraColor">
+</div>
+<ul>
+    <li *ngFor="let color of colores | filtro:filtraColor">{{color}}</li>
+</ul>
+
 <!-- *ngIf -->
 <!-- <button type="button" *ngIf="darkMode" (click)="activaLightMode()">🌙</button>
 <button type="button" *ngIf="!darkMode" (click)="activaDarkMode()">🌞</button> -->
@@ -43,11 +60,9 @@ elimina o añade elementos, p.ej. -->
 <!-- *ngFor -->
 
 <ul>
-    <li [ngStyle]="{listStyle: 'none'}" 
-    *ngFor="let animal of animales; let pos = index;
-    let isLast = last; let isFirst = first; trackBy: trackByAnimales" 
-    >
-    <hr *ngIf="isFirst">
+    <li [ngStyle]="{listStyle: 'none'}" *ngFor="let animal of animales; let pos = index;
+    let isLast = last; let isFirst = first; trackBy: trackByAnimales">
+        <hr *ngIf="isFirst">
         <span>
             {{pos + 1}} : {{animal | titlecase}} {{isLast ? '(Last)' : '(Is not last)'}}
         </span>
@@ -57,8 +72,7 @@ elimina o añade elementos, p.ej. -->
 <!-- trackBy se usa cuando hay una lista y componenetes se añaden al inicio o al medio,
 se puede eliminar un elemento, ordenar -->
 <ul>
-    <li
-    *ngFor="let animal of animales2; trackBy: trackByAnimales2">
+    <li *ngFor="let animal of animales2; trackBy: trackByAnimales2">
         <span>
             {{animal.tipo | titlecase}}
         </span>
@@ -66,10 +80,10 @@ se puede eliminar un elemento, ordenar -->
 </ul>
 
 <div [ngSwitch]=colorLetra>
- <!--  <p *ngSwitchCase="'orange'">La letra naranja</p>
+    <!--  <p *ngSwitchCase="'orange'">La letra naranja</p>
     <p *ngSwitchCase="'blue'">La letra azul</p>
     <p *ngSwitchCase="'red'">La letra roja</p> -->
-    <ng-container *ngFor="let color of colores" >
+    <ng-container *ngFor="let color of colores">
         <p *ngSwitchCase="color">La letra es {{color}}</p>
     </ng-container>
     <p *ngSwitchDefault>La letra negra</p>
@@ -89,5 +103,3 @@ se puede eliminar un elemento, ordenar -->
 input tiene que estar moviendo -->
 
 <input [appPowerMode]=coloresSimbolo type="text">
-    
-
