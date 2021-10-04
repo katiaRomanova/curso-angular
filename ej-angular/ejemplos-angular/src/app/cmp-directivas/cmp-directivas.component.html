@@ -1,5 +1,14 @@
 <h2>Directivas</h2>
 
+<!-- trackBy repinta elemento que ha cambiado, para no repintar 
+todo el array completo-->
+<ul>
+    <li *ngFor="let animal of animales3; trackBy: trackById">
+        {{animal.tipo}}
+    </li>
+</ul>
+
+
 <h3>De atributo</h3>
 <!-- ngStyle es una directiva, recibe un objeto {}
     para hacer los stilos dinámicos al botón p.ej.-->

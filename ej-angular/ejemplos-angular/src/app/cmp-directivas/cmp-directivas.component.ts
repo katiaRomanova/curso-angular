@@ -7,20 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CmpDirectivasComponent implements OnInit {
 
-  underline =  'line-through';
+  underline = 'line-through';
   colorLetra = 'orange';
   pintaElFondo = true;
   darkMode = true;
 
   animales = [
     'perro', 'gato', 'canario', 'tortuga'
-  ] 
+  ]
 
   animales2 = [
-    {id: 1, tipo: 'perro'}, 
-    {id: 2, tipo: 'gato'}, 
-    {id: 3, tipo: 'canario'},
-    {id: 4, tipo: 'tortuga'}
+    { id: 1, tipo: 'perro' },
+    { id: 2, tipo: 'gato' },
+    { id: 3, tipo: 'canario' },
+    { id: 4, tipo: 'tortuga' }
+  ]
+
+  animales3 = [
+    { id: 1, tipo: 'perro' },
+    { id: 2, tipo: 'gato' }
   ]
 
   colores = [
@@ -29,7 +34,7 @@ export class CmpDirectivasComponent implements OnInit {
 
   filtraColor = '';
 
-  coloresSimbolo= [
+  coloresSimbolo = [
     'orange', 'blue', 'red', 'yellow', 'grey', 'pink', 'brown', 'violet'
   ]
 
@@ -37,9 +42,16 @@ export class CmpDirectivasComponent implements OnInit {
 
   ngOnInit(): void {
 
+    setTimeout(() => {
+      this.animales3 =
+        [
+          { id: 1, tipo: 'canario' },
+          { id: 2, tipo: 'gato' }
+        ]
+    }, 8000);
   }
 
-  addColor(event: any){
+  addColor(event: any) {
     //push guarda valor en la misma instancia de array 
     //this.colores.push(event.target.value);
     //guargamos un valor nuevo en una nueva instancia de array
@@ -47,41 +59,45 @@ export class CmpDirectivasComponent implements OnInit {
     this.colores = [... this.colores, event.target.value];
   }
 
-  activaDarkMode(){
+  activaDarkMode() {
     this.darkMode = true;
   }
 
-  activaLightMode(){
+  activaLightMode() {
     this.darkMode = false;
   }
-  
 
-  toggleFondo(){
+
+  toggleFondo() {
     this.pintaElFondo = !this.pintaElFondo;
   }
 
   getStyles() {
     return {
-      textDecoration: 'underline', 
+      textDecoration: 'underline',
       color: this.colorLetra
 
     }
   }
 
-  getClases(){
+  getClases() {
     return {
       letraRoja: true,
       fondoAmarillo: this.pintaElFondo
     }
   }
 
-  trackByAnimales(index: number, animal: string){
+  trackByAnimales(index: number, animal: string) {
     //console.log(animal);
     return index;
   }
 
-  trackByAnimales2(index: number, animal: any){
+  trackByAnimales2(index: number, animal: any) {
     //console.log(animal.id);
+    return animal.id;
+  }
+
+  trackById(index: number, animal: any): number {
     return animal.id;
   }
 }

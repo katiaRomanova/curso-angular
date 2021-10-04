@@ -1,0 +1,56 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Tarea 1",
+      "completada": false,
+      "usuarioId": 1,
+      "fecha": "01/10/2020"
+    },
+    {
+      "id": 2,
+      "titulo": "Tarea 2",
+      "completada": true,
+      "usuarioId": 2,
+      "fecha": "12/09/2020"
+    },
+    {
+      "titulo": "Tarea 3",
+      "completada": false,
+      "usuarioId": 1,
+      "fecha": "04/10/2021",
+      "id": 3
+    },
+    {
+      "titulo": "Tarea 4",
+      "completada": true,
+      "usuarioId": 2,
+      "fecha": "03/10/2021",
+      "id": 4
+    },
+    {
+      "titulo": "Tarea 5",
+      "completada": true,
+      "usuarioId": 2,
+      "fecha": "03/10/2021",
+      "id": 5
+    },
+    {
+      "titulo": "Tarea 6",
+      "completada": false,
+      "usuarioId": 1,
+      "fecha": "01/01/2021",
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Charly Falco"
+    },
+    {
+      "id": 2,
+      "nombre": "Octavia Blake"
+    }
+  ]
+}

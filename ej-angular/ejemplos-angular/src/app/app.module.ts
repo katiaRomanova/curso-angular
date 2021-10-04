@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { ComponenteAMano } from './componente-a-mano/componente-a-mano.component';
 import { ComponenteAComponent } from './componente-a/componente-a.component';
 import { ComponenteBComponent } from './componente-b/componente-b.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component';
-import { FormsModule } from '@angular/forms';
 import { EventosComponent } from './cmp-data-binding/eventos/eventos.component';
 import { CmpComunicacionEntreComponentesComponent } from './cmp-comunicacion-entre-componentes/cmp-comunicacion-entre-componentes.component';
 import { SugusComponent } from './cmp-comunicacion-entre-componentes/sugus/sugus.component';
@@ -27,6 +29,9 @@ import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
 import { LukeComponent as SLukeComponent } from './cmp-servicios/luke/luke.component';
 import { LeiaComponent as SLeiaeComponent } from './cmp-servicios/leia/leia.component';
 import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
+import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 
 
 @NgModule({
@@ -55,11 +60,15 @@ import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
     CmpServiciosComponent,
     SLukeComponent,
     SLeiaeComponent,
-    TareaComponent
+    TareaComponent,
+    CmpObservablesComponent,
+    UnsubscribeComponent,
+    CmpHttpComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

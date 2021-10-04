@@ -1,0 +1,116 @@
+{
+    "vendehumos": [
+        {
+            "id": 1,
+            "nombre": "Kuailian",
+            "categoriaId": 1,
+            "redesSociales": ["Facebook", "Instagramm", "Twitter", "Youtube"],
+            "descripcion": "Una plataforma cripto con todas las funciones que ofrece una selección diversa de servicios de moneda digital, centro de aprendizaje gratuito y fundación de caridad blockchain.",
+            "votos": 0,
+            "fechaAlta": "",
+            "usuarioId": 1,
+            "imagen": "https://www.lawyerpress.com/wordpress/wp-content/uploads/2021/03/Kualian.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "",
+            "categoriaId": 2,
+            "redesSociales": ["Facebook", "Instagramm", "Twitter", "Youtube"],
+            "descripcion": "",
+            "votos": 0,
+            "fechaAlta": "",
+            "usuarioId": 2,
+            "imagen": ""
+        },
+        {
+            "id": 3,
+            "nombre": "",
+            "categoriaId": 3,
+            "redesSociales": ["Facebook", "Instagramm", "Twitter", "Youtube"],
+            "descripcion": "",
+            "votos": 0,
+            "fecfhaAlta": "",
+            "usuarioId": 3,
+            "imagen": ""
+        },
+        {
+            "id": 4,
+            "nombre": "",
+            "categoriaId": 4,
+            "redesSociales": ["Facebook", "Instagramm", "Twitter", "Youtube"],
+            "descripcion": "",
+            "votos": 0,
+            "fecfhaAlta": "",
+            "usuarioId": 4,
+            "imagen": ""
+        },
+        {
+            "id": 5,
+            "nombre": "",
+            "categoriaId": 1,
+            "redesSociales": ["Facebook", "Instagramm", "Twitter", "Youtube"],
+            "descripcion": "",
+            "votos": 0,
+            "fecfhaAlta": "",
+            "usuarioId": 5,
+            "imagen": ""
+        }
+    ],
+
+    "categorias" : [
+        {
+            "id" : 1,
+            "titulo" : "crypto"
+        },
+        {
+            "id" : 2,
+            "titulo" : "dropshipping"
+        },
+        {
+            "id" : 3,
+            "titulo" : "apuestas"
+        },
+        {
+            "id" : 4,
+            "titulo" : "trading"
+        }
+    ],
+
+    "usuarios" : [
+        {
+            "id": 1,
+            "nombre" : "",
+            "foto": "",
+            "password": "",
+            "email": ""
+        },
+        {
+            "id": 2,
+            "nombre" : "",
+            "foto": "",
+            "password": "",
+            "email": ""
+        },
+        {
+            "id": 3,
+            "nombre" : "",
+            "foto": "",
+            "password": "",
+            "email": ""
+        },
+        {
+            "id": 4,
+            "nombre" : "",
+            "foto": "",
+            "password": "",
+            "email": ""
+        },
+        {
+            "id": 3,
+            "nombre" : "",
+            "foto": "",
+            "password": "",
+            "email": ""
+        }
+    ]
+}
