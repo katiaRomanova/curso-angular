@@ -6,6 +6,7 @@ import { DetallesVendehumoComponent } from './components/detalles-vendehumo/deta
 import { ListaVendehumosComponent } from './components/lista-vendehumos/lista-vendehumos.component';
 import { AddVendehumoComponent } from './components/add-vendehumo/add-vendehumo.component';
 import { InfoVendehumoComponent } from './components/info-vendehumo/info-vendehumo.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InfoVendehumoComponent } from './components/info-vendehumo/info-vendehu
     InfoVendehumoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

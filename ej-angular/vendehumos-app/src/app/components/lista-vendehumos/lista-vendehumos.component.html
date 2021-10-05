@@ -1,1 +1,11 @@
-<p>lista-vendehumos works!</p>
+<h2>Vendehumos</h2>
+
+<div *ngIf="vendehumos">
+    <ul>
+        <li *ngFor="let vendehumo of vendehumos">
+           <span>{{vendehumo.nombre}}</span> 
+           <button type="button"> Más info </button>
+           <button type="button" (click)="votar(vendehumo.id, vendehumo.votos)">Votar: {{vendehumo.votos}} </button>
+        </li>
+    </ul>
+</div>

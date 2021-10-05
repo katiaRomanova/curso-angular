@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 
@@ -32,6 +32,16 @@ import { TareaComponent } from './cmp-servicios/tarea/tarea.component';
 import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
 import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { Error404Component } from './cmp-routing/error404/error404.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { ListaUsuariosComponent } from './cmp-routing/lista-usuarios/lista-usuarios.component';
+import { RoutingModule } from './cmp-routing/app.routes';
+import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
+import { SharedModule } from './cmp-modulos/shared/shared.module';
+import { TokenInterceptor } from './cmp-http/token.interceptor';
+import { CacheInterceptor } from './cmp-http/cache.interceptor';
 
 
 @NgModule({
@@ -63,14 +73,25 @@ import { CmpHttpComponent } from './cmp-http/cmp-http.component';
     TareaComponent,
     CmpObservablesComponent,
     UnsubscribeComponent,
-    CmpHttpComponent
+    CmpHttpComponent,
+    CmpRoutingComponent,
+    Error404Component,
+    NuevoUsuarioComponent,
+    ListaUsuariosComponent,
+    InfoUsuarioComponent,
+    CmpModulosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RoutingModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

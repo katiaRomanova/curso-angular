@@ -13,14 +13,14 @@ export class TareasService {
   constructor(private httClient: HttpClient) { }
 
   getTareas() {
-    return this.httClient.get(`${environment.BASE_URL_API}/tareas`  , {
-      headers: { 'Authorization': '1234' }
+    return this.httClient.get(`${environment.BASE_URL_API}/tareas`, {
+      //headers: { 'Authorization': '1234' }
     });
   }
 
   guardarTarea(tarea: any) {
     return this.httClient.post(`${environment.BASE_URL_API}/tareas`, tarea, {
-      headers: { 'Authorization': '1234' }
+      //headers: { 'Authorization': '1234' }
     });
   }
 
@@ -28,14 +28,14 @@ export class TareasService {
     return this.httClient.patch(`${environment.BASE_URL_API}/tareas/${tareaId}`,
       { completada },
       {
-        headers: { 'Authorization': '1234' }
+        //headers: { 'Authorization': '1234' }
       })
   }
 
   eliminarTarea(tareaId: number) {
     return this.httClient.delete(`${environment.BASE_URL_API}/tareas/${tareaId}`,
       {
-        headers: { 'Authorization': '1234' }, 
+        //headers: { 'Authorization': '1234' }, 
         observe: 'response'
       })
   }

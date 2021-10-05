@@ -1,0 +1,25 @@
+<h2>Routing (@angular/router)</h2>
+
+<ul>
+    <li>
+        <!-- <a href="/">Inicio</a> -->
+        <a [routerLink]="['/']">Inicio</a>
+    </li>
+    
+    <li>
+        <!-- <a href="/nuevo-usuario">Nuevo usuario</a> -->
+        <!-- ponemos barra delante para que se empieza la ruta a partir del dominio,
+        si la quitamos configurará ruta a partir de la posición actual-->
+        <a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a>
+    </li>
+    <li>
+        <!-- <a href="/">Inicio</a> -->
+        <a [routerLink]="['/admin']">Administración (Lazy Loading)</a>
+    </li>
+</ul>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+<!-- router-link utiliza prevent default para no refrescar la página -->
