@@ -1,1 +1,25 @@
-<p>add-vendehumo works!</p>
+<h4>Crear un vendehumos nuevo</h4>
+
+<form  > <!--[formGroup]="formulario" (ngSubmit)="crear()"-->
+    <div>
+        <label for="nombre">Usuario</label>
+        <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div>
+        <label for="categoria">Categoria</label>
+
+        <select class="form-select" id="categoria" formControlName="password">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+
+    </div>
+    <div>
+        <label for="descripcion">Descripción</label>
+        <textarea class="form-control"></textarea>
+    </div>
+    <button type="submit" >Guardar</button><!--[disabled]="formulario.invalid" -->
+    <button type="submit">Guardar</button>
+</form>

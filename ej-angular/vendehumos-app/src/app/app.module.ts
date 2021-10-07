@@ -8,6 +8,7 @@ import { AddVendehumoComponent } from './components/add-vendehumo/add-vendehumo.
 import { HttpClientModule } from '@angular/common/http';
 import { RoutingModule } from './app.routes';
 import { DetallesUsuarioComponent } from './components/detalles-usuario/detalles-usuario.component';
+import { ComponentsComponent } from './components/components.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { DetallesUsuarioComponent } from './components/detalles-usuario/detalles
     DetallesVendehumoComponent,
     ListaVendehumosComponent,
     AddVendehumoComponent,
-    DetallesUsuarioComponent
+    DetallesUsuarioComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,30 @@
-<h2>Vendehumos</h2>
+<h2 class="text-center">Vendehumos</h2>
 
-<button type="submit" [routerLink]="['/nuevo-vendehumos']">Crear nuevo</button>
+<button type="submit" [routerLink]="['/nuevo-vendehumos']" class="btn btn-sm btn-secondary ms-2">Crear vendehumos</button>
 
-<div *ngIf="vendehumos">
-    <ul>
-        <li *ngFor="let vendehumo of vendehumos">
-            <img [src]="vendehumo.imagen" alt="" width="10%">
-           <span>{{vendehumo.nombre}}</span> 
-           
-            <ng-container *ngIf="vendehumo.categorias != null">
-                <span *ngFor="let categoria of vendehumo.categorias">
-                   <b> {{categoria.titulo}} </b>
-                </span>
-            </ng-container>
-           
-           <button type="button" [routerLink]="['/vendehumos', vendehumo.id]"> Más info </button>
-           <button type="button" (click)="votar(vendehumo.id, vendehumo.votos)"> {{vendehumo.votos}} 👍 </button>
-        </li>
-    </ul>
+<div *ngIf="vendehumos" class="container mt-4">
+   
+            <div *ngFor="let vendehumo of vendehumos"  class="d-flex border justify-content-around" >
+                <div>
+                    <img [src]="vendehumo.imagen" alt="" width="10%">
+                    <span>{{vendehumo.nombre}}</span>
+
+                    <ng-container *ngIf="vendehumo.categorias != null">
+                        <span *ngFor="let categoria of vendehumo.categorias" class="badge bg-warning text-dark">
+                            <b> {{categoria.titulo}} </b>
+                        </span>
+                    </ng-container>
+                   
+                </div>
+                <div class="d-flex">
+                  
+                           <button type="button" [routerLink]="['/vendehumos', vendehumo.id]" class="btn btn-sm btn-info"> Más
+                        info </button>
+                
+                      <button type="button" (click)="votar(vendehumo.id, vendehumo.votos)"
+                        class="btn btn-sm btn-outline-secondary"> {{vendehumo.votos}} 👍 </button>
+                        
+                </div>
+            </div>
+    
 </div>

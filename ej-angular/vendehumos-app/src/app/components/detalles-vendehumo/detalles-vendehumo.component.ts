@@ -36,7 +36,14 @@ export class DetallesVendehumoComponent implements OnInit {
     
       }
     })
+  }
 
+  onActivate(event: any) {
+    console.log('event activate:', event)
+  }
+
+  onDeactivate(event: any) {
+    console.log('event Deactivate:', event)
   }
 
 }

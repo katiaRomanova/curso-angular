@@ -7,9 +7,10 @@ import { ListaVendehumosComponent } from './components/lista-vendehumos/lista-ve
 const RUTAS: Routes = [
     { path: 'vendehumos', component: ListaVendehumosComponent },
     //{ path: 'detalles-vendehumo', component: DetallesVendehumoComponent },
-    { path: 'vendehumos/:id', component: DetallesVendehumoComponent },
+    { path: 'vendehumos/:id', component: DetallesVendehumoComponent ,
+     children: [{ path: 'usuarios/:id', component:  DetallesUsuarioComponent}]},
     { path: 'nuevo-vendehumos', component: AddVendehumoComponent},
-    { path: 'usuarios/:id', component:  DetallesUsuarioComponent},
+   // { path: 'usuarios/:id', component:  DetallesUsuarioComponent /*, outlet: 'right'*/},
     { path: '', redirectTo: 'vendehumos', pathMatch: 'full' }
 ]
 

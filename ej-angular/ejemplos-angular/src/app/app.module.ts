@@ -45,6 +45,8 @@ import { CacheInterceptor } from './cmp-http/cache.interceptor';
 import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
 import { ErrorComponent } from './cmp-formularios/error/error.component';
 import { FormReactivoComponent } from './cmp-formularios/form-reactivo/form-reactivo.component';
+import { FormNormalComponent } from './cmp-formularios/form-normal/form-normal.component';
+import { CmpInternacionalizacionComponent } from './cmp-internacionalizacion/cmp-internacionalizacion.component';
 
 
 @NgModule({
@@ -85,7 +87,9 @@ import { FormReactivoComponent } from './cmp-formularios/form-reactivo/form-reac
     CmpModulosComponent,
     CmpFormulariosComponent,
     ErrorComponent,
-    FormReactivoComponent
+    FormReactivoComponent,
+    FormNormalComponent,
+    CmpInternacionalizacionComponent
   ],
   imports: [
     BrowserModule,

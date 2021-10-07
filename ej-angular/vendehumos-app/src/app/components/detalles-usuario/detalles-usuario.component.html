@@ -1,4 +1,5 @@
 <div *ngIf="usuario !== null">
     <h4>Info usuario {{ usuario.id }} </h4>
+    <img [src]="usuario.foto" alt="" width="20%">
     <pre>{{usuario | json}} </pre>
 </div>

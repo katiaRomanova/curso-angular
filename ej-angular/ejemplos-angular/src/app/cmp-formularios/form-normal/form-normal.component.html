@@ -1,0 +1,25 @@
+<h3>Formulario normal</h3>
+
+<!-- para poder enviar datos del formulario añadimos referencia form y 
+le asignamos que es de tipo ngForm para que se envie un Objeto de datos en vez 
+de etiqueta de HTML form-->
+<form  (ngSubmit)="login(form)" #form="ngForm">
+    <div>
+        <label for="username">Usuario</label>
+        <input type="text" id="username" name="username" 
+        [(ngModel)]="datosLogin.usuario" required #usuario="ngModel">
+        <app-error *ngIf="usuario.invalid && usuario.touched"
+        [errores]="usuario.errors">
+        </app-error>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" 
+        [(ngModel)]="datosLogin.password" required minlength="5" #pass="ngModel">
+        <app-error *ngIf="pass.invalid && pass.touched"
+        [errores]="pass.errors">
+    </app-error>
+    </div>
+    <button type="submit">Login</button>
+    <button type="submit" [disabled]="form.invalid">Login</button>
+</form>

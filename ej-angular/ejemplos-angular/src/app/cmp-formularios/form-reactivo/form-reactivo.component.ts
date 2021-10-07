@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, FormArray } from '@angular/forms';
+import { AuthService } from '../auth.service';
+import jwtDecode from 'jwt-decode';
 
 @Component({
   selector: 'app-form-reactivo',
@@ -9,8 +11,9 @@ import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors }
 export class FormReactivoComponent implements OnInit {
 
   formulario: FormGroup;
+  datosPayload: any = null;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
@@ -24,15 +27,54 @@ export class FormReactivoComponent implements OnInit {
           Validators.minLength(5),
           Validators.pattern('(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$')],
           updateOn: 'blur' //valida campo cuando pierda foco
-        })
+        }),
+        categorias: new FormArray([
+
+        ])
     } /* como segundo parametro se puede añadir,
     en este caso en vez de utilizar control: AbstractControl,
     ponemos FormGroup
     , {validators: []}*/ )
   }
 
+  selectCheckbox(event: any) {
+    if(event.target.cheched){
+      (<FormArray>this.formulario.controls.categorias).push(new FormControl(event.target.value))
+    }else{
+      //quitar del formArray
+    }
+  }
+
   login() {
     console.log(this.formulario);
+    const { username, password } = this.formulario.value;
+
+    this.authService.login(username, password)
+      .subscribe((datos: any) => {
+        console.log(datos);
+        console.log(datos.token);
+        localStorage.setItem('jwtToken', datos.token);
+        //si queremos guardar datos en session storage,
+        //sessionStorage.setItem('jwtToken', datos.token);
+
+        const payload = jwtDecode(datos.token);
+        this.datosPayload = payload;
+        console.log({payload});
+      });
+  }
+
+  logout() {
+    this.authService.logout();
+  }
+
+  getDatos() {
+    this.authService.getDatos()
+      .subscribe((datos: any) => {
+        console.log({ datos });
+      }, (error) => {
+        alert(error.error.msg);
+        console.log(error.error.msg);
+      })
   }
 
   //minLength customizado,

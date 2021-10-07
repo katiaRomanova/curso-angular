@@ -14,8 +14,8 @@
     <button type="button" *ngFor="let categorias of vendehumo.categorias"> {{categorias.titulo}} </button>
   <!-- <pre>{{vendehumo | json}} </pre>-->
 
-  <button type="button" [routerLink]="['/usuarios', vendehumo.usuarioId]">Mostrar datos del creador</button>
+  <button type="button" [routerLink]="['usuarios', vendehumo.usuarioId]">Mostrar datos del creador</button>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet> </router-outlet>
 
