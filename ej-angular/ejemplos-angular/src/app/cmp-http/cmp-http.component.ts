@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { TareasService } from './tareas.service';
 
@@ -44,5 +45,29 @@ export class CmpHttpComponent implements OnInit {
       console.log(resp);
       console.log('Se ha eliminado correctamente');
     })
+  }
+
+  getTarea() {
+    this.tareaService.getTareaConCategorias(4)
+    .subscribe((tarea: any) => {
+      console.log({tarea});
+    })
+  }
+
+  getTareasCat() {
+    this.tareaService.getTareasPorCategoria(2)
+    .subscribe((tareas: any) => {
+      console.log('tareas:');
+      console.log(tareas);
+    })
+  }
+
+  getTareas() {
+    this.tareaService.getTareasConCategorias()
+    .subscribe((tareas: any) => {
+      console.log('tareas:');
+      console.log(tareas);
+    })
+
   }
 }

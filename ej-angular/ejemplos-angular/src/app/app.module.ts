@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -42,6 +42,9 @@ import { CmpModulosComponent } from './cmp-modulos/cmp-modulos.component';
 import { SharedModule } from './cmp-modulos/shared/shared.module';
 import { TokenInterceptor } from './cmp-http/token.interceptor';
 import { CacheInterceptor } from './cmp-http/cache.interceptor';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ErrorComponent } from './cmp-formularios/error/error.component';
+import { FormReactivoComponent } from './cmp-formularios/form-reactivo/form-reactivo.component';
 
 
 @NgModule({
@@ -79,18 +82,22 @@ import { CacheInterceptor } from './cmp-http/cache.interceptor';
     NuevoUsuarioComponent,
     ListaUsuariosComponent,
     InfoUsuarioComponent,
-    CmpModulosComponent
+    CmpModulosComponent,
+    CmpFormulariosComponent,
+    ErrorComponent,
+    FormReactivoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
+    //{ provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

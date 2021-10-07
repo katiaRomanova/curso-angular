@@ -12,15 +12,19 @@ export class ListaVendehumosComponent implements OnInit {
 
   constructor(private vendehumosService: VendehumosService) { }
 
+  //mostramos la lista de vendehumos,
   ngOnInit(): void {
 
-    this.vendehumosService.getVendehumos()
+   /* this.vendehumosService.getVendehumos()
     .subscribe(datos => {
       console.log(datos);
       this.vendehumos = datos;
-    })
+    })*/
+
+    this.getVendehumos();
   }
 
+  //cuando se pulsa el botón votar
   votar(id: number, votos: number) {
 
    this.vendehumosService.votar(id, votos)
@@ -39,5 +43,14 @@ export class ListaVendehumosComponent implements OnInit {
     })
   }
 
-  
+
+  getVendehumos(){
+    this.vendehumosService.getVendeHumosConCategorias()
+    .subscribe((vendehumos: any) => {
+      console.log('vendehumos:');
+      console.log(vendehumos);
+
+      this.vendehumos = vendehumos;
+    })
+  }
 }

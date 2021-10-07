@@ -1,11 +1,21 @@
 <h2>Vendehumos</h2>
 
+<button type="submit" [routerLink]="['/nuevo-vendehumos']">Crear nuevo</button>
+
 <div *ngIf="vendehumos">
     <ul>
         <li *ngFor="let vendehumo of vendehumos">
+            <img [src]="vendehumo.imagen" alt="" width="10%">
            <span>{{vendehumo.nombre}}</span> 
-           <button type="button"> Más info </button>
-           <button type="button" (click)="votar(vendehumo.id, vendehumo.votos)">Votar: {{vendehumo.votos}} </button>
+           
+            <ng-container *ngIf="vendehumo.categorias != null">
+                <span *ngFor="let categoria of vendehumo.categorias">
+                   <b> {{categoria.titulo}} </b>
+                </span>
+            </ng-container>
+           
+           <button type="button" [routerLink]="['/vendehumos', vendehumo.id]"> Más info </button>
+           <button type="button" (click)="votar(vendehumo.id, vendehumo.votos)"> {{vendehumo.votos}} 👍 </button>
         </li>
     </ul>
 </div>

@@ -1,24 +1,41 @@
 {
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Cat 1"
+    },
+    {
+      "id": 2,
+      "titulo": "Cat 2"
+    },
+    {
+      "id": 3,
+      "titulo": "Cat 3"
+    }
+  ],
   "tareas": [
     {
       "id": 1,
       "titulo": "Tarea 1",
       "completada": false,
       "usuarioId": 1,
-      "fecha": "01/10/2020"
+      "fecha": "01/10/2020",
+      "categoriasIds": [1,2]
     },
     {
       "id": 2,
       "titulo": "Tarea 2",
       "completada": true,
       "usuarioId": 2,
-      "fecha": "12/09/2020"
+      "fecha": "12/09/2020",
+      "categoriasIds": [2,3]
     },
     {
       "titulo": "Tarea 3",
       "completada": false,
       "usuarioId": 1,
       "fecha": "04/10/2021",
+      "categoriasIds": [3],
       "id": 3
     },
     {
@@ -26,6 +43,7 @@
       "completada": true,
       "usuarioId": 2,
       "fecha": "03/10/2021",
+      "categoriasIds": [1,2,3],
       "id": 4
     },
     {
@@ -33,6 +51,7 @@
       "completada": true,
       "usuarioId": 2,
       "fecha": "03/10/2021",
+      "categoriasIds": [1,3],
       "id": 5
     },
     {
@@ -40,6 +59,7 @@
       "completada": false,
       "usuarioId": 1,
       "fecha": "01/01/2021",
+      "categoriasIds": [1],
       "id": 6
     }
   ],

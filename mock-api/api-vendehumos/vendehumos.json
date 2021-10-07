@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Kuailian",
-      "categoriaId": 1,
+      "categoriaId": [1],
       "redesSociales": [
         "Facebook",
         "Instagramm",
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "nombre": "Arbistar",
-      "categoriaId": 2,
+      "categoriaId": [2, 3],
       "redesSociales": [
         "Facebook",
         "Instagramm",
@@ -34,12 +34,12 @@
     {
       "id": 3,
       "nombre": "Fórum Filatélico",
-      "categoriaId": 4,
+      "categoriaId": [4],
       "redesSociales": [
         "Facebook"
       ],
       "descripcion": "Prometía unas rentabilidades fijas, no dependientes de la evolución del mercado, y superiores a las de las inversiones tradicionales, alegando la supuesta revalorización de los sellos en que decía invertir el dinero de sus clientes",
-      "votos": 1203,
+      "votos": 1204,
       "fechaAlta": "09/05/2006",
       "usuarioId": 3,
       "imagen": "https://upload.wikimedia.org/wikipedia/ca/4/45/Logo_forum_filatelico.jpg"
@@ -47,12 +47,12 @@
     {
       "id": 4,
       "nombre": "Bernard Madoff Ponzi Scheme",
-      "categoriaId": 4,
+      "categoriaId":[4],
       "redesSociales": [
         "Facebook"
       ],
       "descripcion": "fue un inversionista bursátil, asesor de inversiones y financiero estadounidense. Fue el presidente de la firma de inversión que lleva su nombre y que él mismo fundó en 1960, una de las más importantes en Wall Street.",
-      "votos": 3001,
+      "votos": 3003,
       "fechaAlta": "05/12/2008",
       "usuarioId": 4,
       "imagen": "https://static01.nyt.com/images/2020/02/05/obituaries/00Madoff2-esp-2/merlin_26474704_c1a6585d-0254-46ed-892c-af731572f435-mobileMasterAt3x.jpg"
@@ -60,12 +60,12 @@
     {
       "id": 5,
       "nombre": "Rafel Mayol",
-      "categoriaId": 2,
+      "categoriaId":[2],
       "redesSociales": [
         "Instagramm"
       ],
       "descripcion": "El objetivo es siempre el mismo: que compren sus cursos 'online', que oscilan entre 600 y 1.000 euros, donde supuestamente se recogen una serie de trucos indispensables para el éxito en el 'dropshipping'.",
-      "votos": 50001,
+      "votos": 50002,
       "fechaAlta": "01/01/1990",
       "usuarioId": 5,
       "imagen": "data:image/jpeg;base64,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"

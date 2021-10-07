@@ -3,18 +3,19 @@ import { ActivatedRoute } from '@angular/router';
 import { VendehumosService } from 'src/app/servicios/vendehumos.service';
 
 @Component({
-  selector: 'app-detalles-vendehumo',
-  templateUrl: './detalles-vendehumo.component.html',
-  styleUrls: ['./detalles-vendehumo.component.css']
+  selector: 'app-detalles-usuario',
+  templateUrl: './detalles-usuario.component.html',
+  styleUrls: ['./detalles-usuario.component.css']
 })
-export class DetallesVendehumoComponent implements OnInit {
+export class DetallesUsuarioComponent implements OnInit {
+
+  usuario: any = null;
 
   constructor(
     private activateRoute: ActivatedRoute,
     private vendehumosService: VendehumosService
+    
   ) { }
-
-  vendehumo: any = null;
 
   ngOnInit(): void {
     console.log(this.activateRoute);
@@ -26,17 +27,16 @@ export class DetallesVendehumoComponent implements OnInit {
         const id = params.get('id');
 
         if(id) {
-           // this.vendehumosService.getVendeHumosbyId(id)
-           this.vendehumosService.getVendehumoConCategorias(parseInt(id))
-            .subscribe((vendehumo: any) => {
-              console.log(vendehumo);
-              this.vendehumo = vendehumo;
+            this.vendehumosService.getUsuarioById(parseInt(id))
+            //también se puede obligar a asignar un valor:
+            //this.usuariosServise.getUsuarioById(id!)
+            .subscribe((usuario: any) => {
+              this.usuario = usuario;
             });
         }
-    
+      
       }
     })
-
   }
 
 }

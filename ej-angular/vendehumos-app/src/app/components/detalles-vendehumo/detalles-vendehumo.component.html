@@ -1,1 +1,21 @@
-<p>detalles-vendehumo works!</p>
+<button type="button" [routerLink]="['/vendehumos']" routerLinkActive="router-link-active" >Back</button>
+
+<div *ngIf="vendehumo !== null">
+    <h4>Info vendehumo: {{ vendehumo.nombre }} </h4>
+    <img [src]="vendehumo.imagen" alt="" width="20%">
+    <p> {{vendehumo.descripcion}} </p>
+
+    <ul>
+        <li *ngFor="let rs of vendehumo.redesSociales"> {{rs}} </li>
+    </ul>
+    <span>Votos: {{vendehumo.votos}} </span>
+    <span>Fecha de creación: {{vendehumo.fechaAlta}} </span>
+
+    <button type="button" *ngFor="let categorias of vendehumo.categorias"> {{categorias.titulo}} </button>
+  <!-- <pre>{{vendehumo | json}} </pre>-->
+
+  <button type="button" [routerLink]="['/usuarios', vendehumo.usuarioId]">Mostrar datos del creador</button>
+</div>
+
+<router-outlet></router-outlet>
+
